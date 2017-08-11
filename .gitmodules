@@ -1,0 +1,6 @@
+[submodule "no-press-wp"]
+	path = no-press-wp
+	url = git@github.com:radu-m/no-press-wp.git
+[submodule "no-press-angular"]
+	path = no-press-angular
+	url = git@github.com:radu-m/no-press-angular.git
