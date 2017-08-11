@@ -9,7 +9,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: example
     volumes:
-      - ./no-press/db-wp:/var/lib/mysql
+      - ./db-wp:/var/lib/mysql
 
   wordpress:
     image: wordpress
@@ -20,7 +20,7 @@ services:
     environment:
       WORDPRESS_DB_PASSWORD: example
     volumes: 
-      - './no-press/wp:/var/www/html'
+      - './no-press-wp:/var/www/html'
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
