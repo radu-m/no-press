@@ -1,0 +1,47 @@
+version: '3.1'
+
+services:
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - ./no-press/db-wp:/var/lib/mysql
+
+  wordpress:
+    image: wordpress
+    ports:
+      - 8080:80
+    depends_on:
+      - mysql
+    environment:
+      WORDPRESS_DB_PASSWORD: example
+    volumes: 
+      - './no-press/wp:/var/www/html'
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    depends_on:
+      - mysql
+    environment:
+      - PMA_ARBITRARY=1
+    restart: always
+    ports:
+      - 8081:80
+    volumes:
+      - /sessions
+
+  # angular:
+  #   container_name: ng-client
+  #   build:
+  #     context: ./no-press/ng-client
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #       - "./no-press/ng-client:/home/boilerplate"
+  #   ports:
+  #       - "3000:8080"
+  #       - "35729:35729"
