@@ -5,5 +5,8 @@
 	path = no-press-angular
 	url = git@github.com:radu-m/no-press-angular.git
 [submodule "no-press-react"]
-	path = no-press-react
-	url = git@github.com:radu-m/no-press-react.git
+  path = no-press-react
+  url = git@github.com:radu-m/no-press-react.git
+[submodule "no-press-elm"]
+  path = no-press-elm
+  url = git@github.com:radu-m/no-press-elm.git
